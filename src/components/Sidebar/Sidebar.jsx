@@ -1,7 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider";
 
 function Sidebar({ setOpen, open }) {
+  let { user } = useContext(AuthContext);
+
   return (
     <div
       className={
@@ -10,29 +13,53 @@ function Sidebar({ setOpen, open }) {
           : "flex [transform:rotateY(90deg)] transition origin-left duration-300 flex-col gap-3 items-start p-[20px] justify-start fixed z-50 inset-0 min-h-screen w-[200px] bg-white shadow-lg shadow-slate-400"
       }
     >
-      <div className="flex gap-[27px] items-center">
-        <p className="font-pacifico ">Fantasy Mart</p>
-        <button
-          onClick={() => setOpen(false)}
-          className="  bg-gray-200  border-none p-[3px] font-bold text-lg cursor-pointer rounded-[50%] w-[30px] h-[30px] flex items-center justify-center"
-        >
-          X
-        </button>
+      <div className="flex gap-[22px] items-center">
+        <div className="flex gap-2 items-center">
+          <img
+            src="/images/ball.png"
+            alt=""
+            className="object-cover object-center"
+          />
+          <p className="font-pacifico text-[12px]">Edufun Toys</p>
+        </div>
+        <div>
+          <button
+            onClick={() => setOpen(false)}
+            className="  bg-gray-200  border-none p-[3px] font-bold text-lg cursor-pointer rounded-[50%] w-[30px] h-[30px] flex items-center justify-center"
+          >
+            X
+          </button>
+        </div>
       </div>
 
-      <Link to="/" className="link" onClick={() => setOpen(false)}>
+      <NavLink to="/" onClick={() => setOpen(false)}>
         Home
-      </Link>
-      <Link className="link" to="/products" onClick={() => setOpen(false)}>
-        Products
-      </Link>
+      </NavLink>
+      {user?.email && (
+        <NavLink to="/all-toys" onClick={() => setOpen(false)}>
+          All Toys
+        </NavLink>
+      )}
+      {user?.email && (
+        <NavLink to="/my-toys" onClick={() => setOpen(false)}>
+          My Toys
+        </NavLink>
+      )}
+      {user?.email && (
+        <NavLink to="/add-toy" onClick={() => setOpen(false)}>
+          Add Toy
+        </NavLink>
+      )}
 
-      <Link className="link" to="/about" onClick={() => setOpen(false)}>
+      <NavLink to="/about" onClick={() => setOpen(false)}>
         About
-      </Link>
-      <Link className="link" to="/contact" onClick={() => setOpen(false)}>
+      </NavLink>
+      <NavLink to="/about" onClick={() => setOpen(false)}>
         Contact
-      </Link>
+      </NavLink>
+      <NavLink to="/blog" onClick={() => setOpen(false)}>
+        Blog
+      </NavLink>
     </div>
   );
 }

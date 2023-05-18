@@ -6,7 +6,11 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        pacifico: ["Pacifico", "cursive"],
+      },
+    },
   },
   plugins: [],
 };

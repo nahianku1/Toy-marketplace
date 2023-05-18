@@ -15,6 +15,13 @@ function Header() {
   let [theme, setTheme] = useState("light");
   let [scrolled, setScrolled] = useState(false);
 
+  let [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      setMobile(true);
+    }
+  }, []);
+
   let handleScroll = () => {
     if (window.scrollY > 50) {
       setScrolled(true);
@@ -64,22 +71,26 @@ function Header() {
             : "bg-transparent  fixed w-[100%] top-0 p-3 font-bold items-center flex justify-evenly"
         }
       >
-        <div>
-          <div>
+        {mobile && (
+          <div className="flex gap-3 items-center justify-center">
             <img
-              src="/images/logo.png"
+              src="/images/ball.png"
               alt=""
               className="object-cover object-center"
             />
+            <p className="font-pacifico">Edufun Toys</p>
           </div>
-          <h1 className="font-pacifico cursor-pointer">
-            <Link to="/">Fantasy Recipes</Link>
-          </h1>
-        </div>
+        )}
+
         <div className="flex gap-3 ">
           <div className="hidden gap-3  md:flex">
             <NavLink to="/">Home</NavLink>
+            {user?.email && <NavLink to="/all-toys">All Toys</NavLink>}
+            {user?.email && <NavLink to="/my-toys">My Toys</NavLink>}
+            {user?.email && <NavLink to="/add-toy">Add Toy</NavLink>}
+
             <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">Contact</NavLink>
             <NavLink to="/blog">Blog</NavLink>
           </div>
           <button
@@ -130,7 +141,7 @@ function Header() {
               Sign Out
             </button>
           ) : (
-            <button className="font-bold">
+            <button className="font-bold px-[18px] py-[10px] rounded-3xl bg-orange-400">
               <Link to="/signin">Sign In</Link>
             </button>
           )}
