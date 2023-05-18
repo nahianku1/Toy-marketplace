@@ -14,7 +14,7 @@ function Register() {
   let passwordRef = useRef("");
   let photoRef = useRef("");
   let navigate = useNavigate();
-  let { auth } = useContext(AuthContext);
+  let { auth } = useContext(AuthContext)
 
   let modifyError = (error) => {
     let modifiedMessage = error.message
