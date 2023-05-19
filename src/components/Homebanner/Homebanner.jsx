@@ -3,9 +3,9 @@ function Homebanner() {
     <>
       <div className=" mx-[20px] mt-[75px]  md:mx-[120px] py-[40px] flex  gap-[70px] flex-wrap md:flex-nowrap">
         <div className="dark:text-white flex flex-col gap-[20px] md:max-w-[55%] justify-center  items-start">
-          <h1 className="text-3xl md:text-5xl  font-bold md:leading-[50px] min-w-max">
+          <h1 className="text-2xl md:text-5xl  font-bold md:leading-[50px] min-w-max">
             Quality products <br /> for everyone <br />
-            <span className="text-orange-400">Elevate Your Joy with Toy!</span>
+            <span className="text-orange-400">Elevate Your Joy with Toy</span>
           </h1>
           <p>
             Unleash the Power of Quality Educational Toys! Explore Our Extensive
@@ -17,7 +17,7 @@ function Homebanner() {
             Trending Products and Unbeatable Offers! Shop the Latest Products at
             Unbeatable Prices! Your One-Stop Shop for All Your Educational Toy.
           </p>
-          <button className=" min-w-max rounded-3xl bg-orange-400 px-[18px] py-[10px] font-bold text-black border-none cursor-pointer">
+          <button className=" min-w-max rounded-3xl  shadow-[inset_4px_4px_8px_white] bg-orange-400 px-[26px] py-[13px] font-bold text-black border-none cursor-pointer">
             Shop Now
           </button>
         </div>

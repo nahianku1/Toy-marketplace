@@ -72,7 +72,7 @@ function Header() {
         }
       >
         {mobile && (
-          <div className="flex gap-3 items-center justify-center">
+          <div className="flex gap-1 items-center justify-center">
             <img
               src="/images/ball.png"
               alt=""
@@ -135,13 +135,13 @@ function Header() {
 
           {user ? (
             <button
-              className="font-bold px-[18px] py-[10px] rounded-3xl bg-orange-400"
+              className="font-bold [box-shadow:inset_1px_1px_2px_white] px-[20px] py-[10px] rounded-3xl bg-orange-400"
               onClick={handleLogout}
             >
               Sign Out
             </button>
           ) : (
-            <button className="font-bold px-[18px] py-[10px] rounded-3xl bg-orange-400">
+            <button className="font-bold shadow-[inset_4px_4px_8px_white] px-[20px] py-[10px] rounded-3xl bg-orange-400">
               <Link to="/signin">Sign In</Link>
             </button>
           )}

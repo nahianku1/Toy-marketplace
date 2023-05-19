@@ -48,14 +48,14 @@ function Register() {
       });
   };
   return (
-    <div className="flex justify-center items-center h-[100vh] bg-green-200">
-      <div className="bg-white w-[320px] md:w-[400px] py-[30px] rounded-md ">
+    <div className="flex justify-center items-center h-[100vh] bg-white">
+      <div className="bg-[#00cec9] w-[320px] md:w-[400px] py-[30px] rounded-md ">
         <form
           action=""
           onSubmit={handleSubmit}
           className="flex items-center justify-center flex-col gap-4"
         >
-          <div className=" mb-5 text-[100px] font-bold text-green-400">
+          <div className=" mb-5 text-[100px] font-bold text-black">
             <IoPersonSharp />
           </div>
           <div>
@@ -140,7 +140,7 @@ function Register() {
           <div>
             <button
               type="submit"
-              className="bg-green-400 px-4 py-2 rounded-lg text-white font-bold"
+              className="bg-black px-4 py-2 rounded-lg text-white font-bold"
             >
               Sing Up
             </button>
