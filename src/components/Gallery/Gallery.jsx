@@ -9,7 +9,7 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 function Gallery() {
   return (
     <>
-      <div className="flex dark:bg-slate-800 flex-col justify-center items-center my-[70px] lg:mx-[120px]  min-w-[310px]">
+      <div className="flex dark:bg-slate-800 flex-col justify-center items-center my-[20px] lg:mx-[120px]  min-w-[310px]">
         <div>
           <h1 className="text-3xl dark:text-white font-pacifico font-bold text-center">
             Gallery

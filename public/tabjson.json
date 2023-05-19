@@ -2,23 +2,23 @@
   {
     "mathematics_toys": [
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d01"},
-        "image": "math_toy1.jpg",
-        "name": "Math Toy 1",
+        "_id": { "$oid": "6165453be0a956001f1b6d01" },
+        "image": "https://images.unsplash.com/photo-1593693846850-286e83655126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+        "name": "Math Mastermind Set",
         "price": 19.99,
         "rating": 4.5
       },
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d02"},
-        "image": "math_toy2.jpg",
-        "name": "Math Toy 2",
+        "_id": { "$oid": "6165453be0a956001f1b6d02" },
+        "image": "https://plus.unsplash.com/premium_photo-1663127348902-44f1f20dd92d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
+        "name": "Number Cruncher Puzzle",
         "price": 12.99,
         "rating": 4.2
       },
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d03"},
-        "image": "math_toy3.jpg",
-        "name": "Math Toy 3",
+        "_id": { "$oid": "6165453be0a956001f1b6d03" },
+        "image": "https://images.unsplash.com/photo-1603356033288-acfcb54801e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+        "name": "Geometric Building Blocks",
         "price": 29.99,
         "rating": 4.7
       }
@@ -27,23 +27,23 @@
   {
     "science_toys": [
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d04"},
-        "image": "science_toy1.jpg",
-        "name": "Science Toy 1",
+        "_id": { "$oid": "6165453be0a956001f1b6d04" },
+        "image": "https://images.unsplash.com/photo-1584515828432-06198c3196a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "name": "Chemistry Lab Kit",
         "price": 24.99,
         "rating": 4.4
       },
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d05"},
-        "image": "science_toy2.jpg",
-        "name": "Science Toy 2",
+        "_id": { "$oid": "6165453be0a956001f1b6d05" },
+        "image": "https://images.unsplash.com/photo-1623939012322-f19aa1539760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+        "name": "Solar-Powered Robot",
         "price": 18.99,
         "rating": 4.1
       },
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d06"},
-        "image": "science_toy3.jpg",
-        "name": "Science Toy 3",
+        "_id": { "$oid": "6165453be0a956001f1b6d06" },
+        "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=875&q=80",
+        "name": "Telescope Explorer Kit",
         "price": 34.99,
         "rating": 4.6
       }
@@ -52,23 +52,48 @@
   {
     "language_toys": [
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d07"},
-        "image": "language_toy1.jpg",
-        "name": "Language Toy 1",
+        "_id": { "$oid": "6165453be0a956001f1b6d07" },
+        "image": "https://images.unsplash.com/photo-1595550903979-1969e5adeb92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+        "name": "Word Wizard Spelling Game",
         "price": 16.99,
         "rating": 4.3
       },
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d08"},
-        "image": "language_toy2.jpg",
-        "name": "Language Toy 2",
+        "_id": { "$oid": "6165453be0a956001f1b6d08" },
+        "image": "https://images.unsplash.com/photo-1644984875413-7f65e3671564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
+        "name": "Storyteller Puppet Theater",
         "price": 14.99,
         "rating": 4.0
       },
       {
-        "_id": {"$oid": "6165453be0a956001f1b6d09"},
-        "image": "language_toy3.jpg",
-        "name": "Language Toy 3",
+        "_id": { "$oid": "6165453be0a956001f1b6d09" },
+        "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+        "name": "Bilingual Alphabet Flashcards",
+        "price": 21.99,
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "engineering_toys": [
+      {
+        "_id": { "$oid": "6165453be0a956001f1b6d07" },
+        "image": "https://plus.unsplash.com/premium_photo-1663091651850-bd044f089c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=896&q=80",
+        "name": "LEGO Technic",
+        "price": 16.99,
+        "rating": 4.3
+      },
+      {
+        "_id": { "$oid": "6165453be0a956001f1b6d08" },
+        "image": "https://plus.unsplash.com/premium_photo-1663089622154-d7953779f99b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "name": "Snap Circuits",
+        "price": 14.99,
+        "rating": 4.0
+      },
+      {
+        "_id": { "$oid": "6165453be0a956001f1b6d09" },
+        "image": "https://images.unsplash.com/photo-1615938801655-3b17dbc3c090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "name": "K'NEX Building Set",
         "price": 21.99,
         "rating": 4.8
       }
