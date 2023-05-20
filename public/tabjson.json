@@ -4,23 +4,35 @@
       {
         "_id": { "$oid": "6165453be0a956001f1b6d01" },
         "image": "https://images.unsplash.com/photo-1593693846850-286e83655126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
-        "name": "Math Mastermind Set",
+        "name": "Math Mastermind Practice Set",
         "price": 19.99,
-        "rating": 4.5
+        "rating": 4.5,
+        "seller_name": "Building Blocks Inc.",
+        "seller_email": "sales@buildingblocksinc.com",
+        "available_quantity": 9,
+        "details": "Math Mastermind Practice Set are a versatile math manipulative that helps children learn mathematical concepts through hands-on exploration. They can be used for counting, sorting, patterning, and building various geometric shapes. Each set contains 100 interlocking cubes in multiple colors. These cubes are durable and easy to connect, making them ideal for young learners. MathLink Cubes promote spatial awareness, logical thinking, and fine motor skills. They encourage creativity as children construct their own designs and explore mathematical relationships. Whether used in the classroom or at home, MathLink Cubes provide an engaging and interactive way for kids to develop essential math skills."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d02" },
         "image": "https://plus.unsplash.com/premium_photo-1663127348902-44f1f20dd92d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
         "name": "Number Cruncher Puzzle",
         "price": 12.99,
-        "rating": 4.2
+        "rating": 4.2,
+        "seller_name": "Brainy Games",
+        "seller_email": "info@brainygames.com",
+        "available_quantity": 7,
+        "details": "Number Cruncher Puzzle is an educational electronics kit that allows kids to build and experiment with real electronic circuits. With easy-to-use components and clear instructions, children can create projects like light bulbs, sirens, and AM radios. The set includes over 50 snap-together parts and a detailed project guide. Snap Circuits foster an understanding of circuitry and electrical principles in a safe and interactive manner. Kids can explore the world of electronics by completing exciting experiments and understanding how different components work together. It encourages problem-solving, critical thinking, and creativity. Snap Circuits is an excellent choice for budding engineers and scientists, providing a hands-on introduction to the world of electronics."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d03" },
         "image": "https://images.unsplash.com/photo-1603356033288-acfcb54801e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
         "name": "Geometric Building Blocks",
         "price": 29.99,
-        "rating": 4.7
+        "rating": 4.7,
+        "seller_name": "Nature Explorations",
+        "seller_email": "contact@natureexplorations.com",
+        "available_quantity": 11,
+        "details": "Geometric Building Blocks is a fun and interactive way for kids to learn the alphabet. Each puzzle piece features a letter of the alphabet and a corresponding image. Children can match the letters to the pictures and practice their letter recognition skills. The set includes 26 durable and colorful puzzle pieces, each showcasing a unique letter and object. It promotes early literacy skills, letter-sound associations, and vocabulary development. The ABC Puzzle Set is perfect for preschoolers and kindergarteners, offering an engaging way to explore language and build foundational reading skills."
       }
     ]
   },
@@ -31,21 +43,33 @@
         "image": "https://images.unsplash.com/photo-1584515828432-06198c3196a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "name": "Chemistry Lab Kit",
         "price": 24.99,
-        "rating": 4.4
+        "rating": 4.4,
+        "seller_name": "Artistic Expressions",
+        "seller_email": "sales@artisticexpressions.com",
+        "available_quantity": 14,
+        "details": "Chemistry Lab Kit is a fun and interactive way for kids to learn the alphabet. Each puzzle piece features a letter of the alphabet and a corresponding image. Children can match the letters to the pictures and practice their letter recognition skills. The set includes 26 durable and colorful puzzle pieces, each showcasing a unique letter and object. It promotes early literacy skills, letter-sound associations, and vocabulary development. The ABC Puzzle Set is perfect for preschoolers and kindergarteners, offering an engaging way to explore language and build foundational reading skills."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d05" },
         "image": "https://images.unsplash.com/photo-1623939012322-f19aa1539760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
         "name": "Solar-Powered Robot",
         "price": 18.99,
-        "rating": 4.1
+        "rating": 4.1,
+        "seller_name": "Logic Games",
+        "seller_email": "info@logicgames.com",
+        "available_quantity": 3,
+        "details": "Solar-Powered Robot is a hands-on educational toy that teaches children about the planets in our solar system. It includes a set of planet models, a sun model, and an instructional guide. Kids can assemble the models and learn interesting facts about each planet. The set encourages curiosity and scientific exploration. Children can discover the order of the planets, their sizes, and their unique characteristics. The Solar System Model Kit promotes spatial awareness, fine motor skills, and an understanding of astronomy. It's an immersive learning experience that sparks imagination and fosters a love for space science."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d06" },
         "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=875&q=80",
         "name": "Telescope Explorer Kit",
         "price": 34.99,
-        "rating": 4.6
+        "rating": 4.6,
+        "seller_name": "Music Masters",
+        "seller_email": "support@musicmasters.com",
+        "available_quantity": 16,
+        "details": "Telescope Explorer Kit allows children to explore the principles of magnetism while building various structures. The blocks have embedded magnets that attract and repel, enabling kids to create unique designs and develop their spatial reasoning skills. With different shapes and colors, children can construct towers, bridges, and more. The magnetic connection provides stability and encourages experimentation. Magnetic Building Blocks promote creativity, problem-solving, and fine motor skills. It stimulates imaginative play and helps children understand basic physics concepts. This set is a fantastic open-ended toy that offers endless possibilities for constructing and exploring."
       }
     ]
   },
@@ -56,21 +80,33 @@
         "image": "https://images.unsplash.com/photo-1595550903979-1969e5adeb92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
         "name": "Word Wizard Spelling Game",
         "price": 16.99,
-        "rating": 4.3
+        "rating": 4.3,
+        "seller_name": "Language Wonders",
+        "seller_email": "info@eduwonders.com",
+        "available_quantity": 15,
+        "details": "Word Wizard Spelling Game is a great tool for young scientists to explore the microscopic world. It includes a durable microscope, prepared slides, and blank slides for kids to create their own specimens. The kit also comes with an illustrated guide to microscopy. Children can observe tiny organisms, plant cells, and other microscopic structures. The Junior Microscope Kit enhances scientific observation skills, attention to detail, and critical thinking. It introduces kids to the wonders of biology and instills a sense of curiosity about the natural world. With adjustable magnification and easy-to"
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d08" },
         "image": "https://images.unsplash.com/photo-1644984875413-7f65e3671564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80",
         "name": "Storyteller Puppet Theater",
         "price": 14.99,
-        "rating": 4.0
+        "rating": 4.0,
+        "seller_name": "Science Explorers",
+        "seller_email": "contact@scienceexplorers.com",
+        "available_quantity": 8,
+        "details": "Storyteller Puppet Theater is a collection of building blocks and connectors that allow kids to build various structures, such as bridges, towers, and vehicles. It encourages creativity, problem-solving, and spatial skills. The set includes a variety of components, including beams, gears, wheels, and connectors, that can be easily assembled. Children can explore engineering principles and learn about structural stability while constructing their designs. The Engineering Construction Set promotes hands-on learning, critical thinking, and perseverance. It provides a platform for young engineers to unleash their creativity and develop a deeper understanding of the principles behind engineering and architecture."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d09" },
         "image": "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
         "name": "Bilingual Alphabet Flashcards",
         "price": 21.99,
-        "rating": 4.8
+        "rating": 4.8,
+        "seller_name": "Creative Minds",
+        "seller_email": "sales@creativeminds.com",
+        "available_quantity": 12,
+        "details": "Bilingual Alphabet Flashcards is an engaging educational toy that introduces kids to the field of robotics. It includes a robotic arm with multiple joints and a control panel. Children can program the robotic arm to perform various tasks, such as picking up objects and moving them around. The kit comes with a detailed instruction manual and programming guide. As kids experiment with the robotic arm, they learn about mechanical systems, robotics, and programming concepts. The Robotic Arm Kit enhances problem-solving skills, logical thinking, and fine motor control. It sparks curiosity and fosters an interest in technology and automation."
       }
     ]
   },
@@ -81,21 +117,33 @@
         "image": "https://plus.unsplash.com/premium_photo-1663091651850-bd044f089c31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=896&q=80",
         "name": "LEGO Technic",
         "price": 16.99,
-        "rating": 4.3
+        "rating": 4.3,
+        "seller_name": "Playful Learners",
+        "seller_email": "info@playfullearners.com",
+        "available_quantity": 20,
+        "details": "LEGO Technic is an engaging educational toy that introduces kids to the field of robotics. It includes a robotic arm with multiple joints and a control panel. Children can program the robotic arm to perform various tasks, such as picking up objects and moving them around. The kit comes with a detailed instruction manual and programming guide. As kids experiment with the robotic arm, they learn about mechanical systems, robotics, and programming concepts. The Robotic Arm Kit enhances problem-solving skills, logical thinking, and fine motor control. It sparks curiosity and fosters an interest in technology and automation."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d08" },
         "image": "https://plus.unsplash.com/premium_photo-1663089622154-d7953779f99b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "name": "Snap Circuits",
         "price": 14.99,
-        "rating": 4.0
+        "rating": 4.0,
+        "seller_name": "Tech Wizards",
+        "seller_email": "support@techwizards.com",
+        "available_quantity": 6,
+        "details": "Snap Circuits is an interactive toy that teaches kids the basics of circuitry and electrical engineering. It includes a circuit board, wires, resistors, capacitors, and LEDs. Children can experiment with building different types of circuits and understanding how electricity flows. The kit comes with a guidebook that explains fundamental concepts and provides step-by-step instructions for various circuit configurations. The Circuit Builder Kit encourages hands-on exploration, problem-solving, and critical thinking. Kids can develop an understanding of electrical components, circuit design, and troubleshooting. It sparks creativity and curiosity about the world of electronics and electrical engineering."
       },
       {
         "_id": { "$oid": "6165453be0a956001f1b6d09" },
         "image": "https://images.unsplash.com/photo-1615938801655-3b17dbc3c090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "name": "K'NEX Building Set",
         "price": 21.99,
-        "rating": 4.8
+        "rating": 4.8,
+        "seller_name": "Disney Toys",
+        "seller_email": "info@disneytoys.com",
+        "available_quantity": 18,
+        "details": "K'NEX Building Set is a captivating educational toy that enables kids to learn about the planets in our solar system. It includes detailed planet models, a sun model, and informational cards with interesting facts about each planet. Kids can assemble the model, learn about the order of the planets, their sizes, and unique features. The Solar System Model encourages curiosity about space and nurtures an interest in astronomy. It promotes spatial awareness, fine motor skills, and scientific knowledge. With this toy, children can embark on an imaginative journey through space and gain a deeper understanding of our cosmic neighborhood."
       }
     ]
   }

@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import { createContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import Footer from "./components/Footer/Footer";
 
 export let FavContext = createContext(null);
 
@@ -20,10 +21,9 @@ function App() {
   return (
     <>
       {/* <FavContext.Provider value={{favstate,setFavstate,updated,setUpdated}}> */}
-      <Header />
+      <Header navbar={true} />
       <Outlet />
-      {/* <Footer /> */}
-      {/* </FavContext.Provider> */}
+      <Footer />
     </>
   );
 }

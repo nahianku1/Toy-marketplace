@@ -1,11 +1,12 @@
 import React from "react";
-import { RotatingLines } from "react-loader-spinner";
+import {  Vortex } from "react-loader-spinner";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import useSWR from "swr";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+
 
 let TabDetails = async () => {
   let res = await fetch(
@@ -21,14 +22,16 @@ function TabView() {
   if (!tabDetails)
     return (
       <div className="flex justify-center items-center min-h-[calc(100vh-45px)]">
-        <RotatingLines
-          strokeColor="grey"
-          strokeWidth="5"
-          animationDuration="0.75"
-          width="200"
-          visible={true}
-        />
-      </div>
+      <Vortex
+        visible={true}
+        height="200"
+        width="200"
+        ariaLabel="vortex-loading"
+        wrapperStyle={{}}
+        wrapperClass="vortex-wrapper"
+        colors={["red", "green", "blue", "yellow", "orange", "purple"]}
+      />
+    </div>
     );
   console.log();
   return (

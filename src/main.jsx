@@ -11,17 +11,18 @@ import Home from "./components/Home/Home.jsx";
 import AuthProvider from "./AuthProvider.jsx";
 import Signin from "./components/Signin/Signin.jsx";
 import Register from "./components/Register/Register.jsx";
+import AddToys from "./components/AddToys/AddToys.jsx";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        
       </Route>
-
+      <Route path="/add-toy" element={<AddToys />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Register />} />
+
       {/* <Route path="/resetemail" element={<ResetEmail />} />
       <Route path="/reset" element={<Reset />} /> */}
     </>
@@ -29,11 +30,9 @@ let router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-
-<AuthProvider>
+  <AuthProvider>
     <RouterProvider router={router}>
       <App />
     </RouterProvider>
   </AuthProvider>
-
 );

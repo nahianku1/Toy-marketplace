@@ -1,7 +1,7 @@
 function Homebanner() {
   return (
     <>
-      <div className=" mx-[20px] mt-[75px]  md:mx-[120px] py-[40px] flex  gap-[70px] flex-wrap md:flex-nowrap">
+      <div className=" mx-[20px] mt-[50px]  md:mx-[120px] py-[40px] flex  gap-[70px] flex-wrap md:flex-nowrap">
         <div className="dark:text-white flex flex-col gap-[20px] md:max-w-[55%] justify-center  items-start">
           <h1 className="text-2xl md:text-5xl  font-bold md:leading-[50px] min-w-max">
             Quality products <br /> for everyone <br />
