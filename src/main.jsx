@@ -12,6 +12,7 @@ import AuthProvider from "./AuthProvider.jsx";
 import Signin from "./components/Signin/Signin.jsx";
 import Register from "./components/Register/Register.jsx";
 import AddToys from "./components/AddToys/AddToys.jsx";
+import Mytoys from "./components/Mytoys/Mytoys.jsx";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,7 @@ let router = createBrowserRouter(
         <Route index element={<Home />} />
       </Route>
       <Route path="/add-toy" element={<AddToys />} />
+      <Route path="/my-toys" element={<Mytoys />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Register />} />
 

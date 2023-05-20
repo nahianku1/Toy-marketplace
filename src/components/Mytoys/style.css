@@ -1,0 +1,14 @@
+
+
+
+th,
+td {
+  border: 1px solid orange;
+  border-collapse: collapse;
+  /* padding: 8px; */
+  width: auto;
+  text-align: center;
+}
+thead{
+    background-color: antiquewhite;
+}

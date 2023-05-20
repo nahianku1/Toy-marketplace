@@ -21,7 +21,7 @@ function AddToys() {
   let availableRef = useRef("");
   let descriptionRef = useRef("");
 
-  let handleSubmit = (e) => {
+  let handleSubmit = async (e) => {
     e.preventDefault();
     let product_name = nameRef.current;
     let product_photo = photoRef.current;
@@ -43,6 +43,25 @@ function AddToys() {
       available,
       description,
     });
+    let res = await fetch("http://localhost:5000/add-toy", {
+      method: "POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body: JSON.stringify({
+        product_name,
+        product_photo,
+        sellname,
+        selleremail,
+        sub_category,
+        price,
+        rating,
+        available,
+        description,
+      }),
+    });
+    let data =await res.json();
+    console.log(data);
   };
   return (
     <>
