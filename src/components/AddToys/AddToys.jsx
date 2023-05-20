@@ -94,33 +94,75 @@ function AddToys() {
 
               <div>
                 <label htmlFor="" className="block">
-                  Seller Email:
+                  Select Sub-category:
                 </label>
                 <select
                   type="text"
-                  defaultValue="Select"
-                  className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
+                  className="focus:shadow-lg outline-none border border-solid border-orange-400 p-1 rounded-md indent-2"
                   placeholder="Seller Email"
                   onChange={(e) => {
                     usernameRef.current = e.target.value;
                   }}
                 >
-                  <option value="math">Mathematical Toy</option>
-                  <option value="">Scientific Toy</option>
-                  <option value="">Language Toy</option>
-                  <option value="">Engineering Toy</option>
+                  <option value="mathematics_toys">Mathematical Toy</option>
+                  <option value="scientific toys">Scientific Toy</option>
+                  <option value="language_toys">Language Toy</option>
+                  <option value="engineering_toys">Engineering Toy</option>
                 </select>
               </div>
 
-              {error && !error === "Weak Password" ? (
-                <p className="text-red-600 font-bold">{error}</p>
-              ) : error === "Weak Password" ? (
-                <p className="text-red-600 font-bold">
-                  Password should be at least 6 characters.
-                </p>
-              ) : (
-                <p className="text-red-600 font-bold">{error}</p>
-              )}
+              <div>
+                <label htmlFor="" className="block">
+                  Price:
+                </label>
+                <input
+                  type="text"
+                  className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
+                  placeholder="Price"
+                  onChange={(e) => {
+                    usernameRef.current = e.target.value;
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor="" className="block">
+                  Rating:
+                </label>
+                <input
+                  type="text"
+                  className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
+                  placeholder="Rating"
+                  onChange={(e) => {
+                    usernameRef.current = e.target.value;
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor="" className="block">
+                  Available Quantity:
+                </label>
+                <input
+                  type="text"
+                  className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
+                  placeholder="Available Quantity"
+                  onChange={(e) => {
+                    usernameRef.current = e.target.value;
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor="" className="block">
+                  Description:
+                </label>
+                <textarea
+                  type="text"
+                  className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
+                  placeholder="Seller Email"
+                  onChange={(e) => {
+                    usernameRef.current = e.target.value;
+                  }}
+                />
+              </div>
 
               <div>
                 <button
@@ -130,12 +172,7 @@ function AddToys() {
                   Save
                 </button>
               </div>
-              <p className="text-[15px]">
-                Already have an account?{" "}
-                <Link to="/signin" className="underline">
-                  Login
-                </Link>
-              </p>
+             
             </form>
           </div>
         </div>
