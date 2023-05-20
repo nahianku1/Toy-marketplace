@@ -4,6 +4,14 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./style.css";
 
+let MytoyDetails = async () => {
+    let res = await fetch(
+      `https://http://localhost:5000/tab-details`
+    );
+    let data = await res.json();
+    return data;
+  };
+
 function Mytoys() {
   return (
     <>

@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useRef, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { IoClipboardSharp, IoPersonSharp } from "react-icons/io5";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -9,29 +7,18 @@ import { AuthContext } from "../../AuthProvider";
 
 function AddToys() {
   let { user } = useContext(AuthContext);
-  let [hidden, setHidden] = useState(true);
-  let [error, setError] = useState("");
-  let nameRef = useRef("");
-  let photoRef = useRef("");
-  let sellernameRef = useRef("");
-  let selleremailRef = useRef("");
-  let subcategoryRef = useRef("");
-  let priceRef = useRef("");
-  let ratingRef = useRef("");
-  let availableRef = useRef("");
-  let descriptionRef = useRef("");
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    let product_name = nameRef.current;
-    let product_photo = photoRef.current;
-    let sellname = sellernameRef.current;
-    let selleremail = selleremailRef.current;
-    let sub_category = subcategoryRef.current;
-    let price = priceRef.current;
-    let rating = ratingRef.current;
-    let available = availableRef.current;
-    let description = descriptionRef.current;
+    let product_name = e.target.name.value;
+    let product_photo = e.target.photo.value;
+    let sellname = e.target.sellername.value;
+    let selleremail = e.target.selleremail.value;
+    let sub_category = e.target.category.value;
+    let price = e.target.price.value;
+    let rating = e.target.rating.value;
+    let available = e.target.available.value;
+    let description = e.target.description.value;
     console.log({
       product_name,
       product_photo,
@@ -45,8 +32,8 @@ function AddToys() {
     });
     let res = await fetch("http://localhost:5000/add-toy", {
       method: "POST",
-      headers:{
-        "content-type":"application/json"
+      headers: {
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         product_name,
@@ -60,7 +47,7 @@ function AddToys() {
         description,
       }),
     });
-    let data =await res.json();
+    let data = await res.json();
     console.log(data);
   };
   return (
@@ -88,11 +75,10 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
-                  className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
+                  name="name"
+                  className="focus:shadow-lg outline-none border border-solid 
+                  border-green-400 p-1 rounded-md indent-2"
                   placeholder="Name"
-                  onChange={(e) => {
-                    nameRef.current = e.target.value;
-                  }}
                 />
               </div>
 
@@ -102,11 +88,9 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
+                  name="photo"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Photo URL"
-                  onChange={(e) => {
-                    photoRef.current = e.target.value;
-                  }}
                 />
               </div>
 
@@ -117,11 +101,9 @@ function AddToys() {
                 <input
                   type="text"
                   defaultValue={user.displayName}
+                  name="sellername"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Seller Name"
-                  onChange={(e) => {
-                    sellernameRef.current = e.target.value;
-                  }}
                 />
               </div>
 
@@ -132,11 +114,10 @@ function AddToys() {
                 <input
                   type="text"
                   defaultValue={user.email}
+                  name="selleremail"
+                  readOnly
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Seller Email"
-                  onChange={(e) => {
-                    selleremailRef.current = e.target.value;
-                  }}
                 />
               </div>
 
@@ -146,11 +127,10 @@ function AddToys() {
                 </label>
                 <select
                   type="text"
+                  defaultValue={"mathematics_toys"}
+                  name="category"
                   className="w-[210px] block focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Seller Email"
-                  onChange={(e) => {
-                    subcategoryRef.current = e.target.value;
-                  }}
                 >
                   <option value="mathematics_toys">Mathematical Toy</option>
                   <option value="scientific_toys">Scientific Toy</option>
@@ -165,11 +145,9 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
+                  name="price"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Price"
-                  onChange={(e) => {
-                    priceRef.current = e.target.value;
-                  }}
                 />
               </div>
               <div>
@@ -178,11 +156,9 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
+                  name="rating"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Rating"
-                  onChange={(e) => {
-                    ratingRef.current = e.target.value;
-                  }}
                 />
               </div>
               <div>
@@ -191,11 +167,9 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
+                  name="available"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Available Quantity"
-                  onChange={(e) => {
-                    availableRef.current = e.target.value;
-                  }}
                 />
               </div>
               <div>
@@ -204,11 +178,9 @@ function AddToys() {
                 </label>
                 <textarea
                   type="text"
+                  name="description"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Toy Description"
-                  onChange={(e) => {
-                    descriptionRef.current = e.target.value;
-                  }}
                 />
               </div>
 
