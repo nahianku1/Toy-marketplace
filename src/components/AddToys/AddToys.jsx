@@ -1,21 +1,48 @@
 /* eslint-disable no-unused-vars */
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoClipboardSharp, IoPersonSharp } from "react-icons/io5";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { AuthContext } from "../../AuthProvider";
 
 function AddToys() {
+  let { user } = useContext(AuthContext);
   let [hidden, setHidden] = useState(true);
   let [error, setError] = useState("");
-  let usernameRef = useRef("");
-  let emailRef = useRef("");
-  let passwordRef = useRef("");
+  let nameRef = useRef("");
   let photoRef = useRef("");
+  let sellernameRef = useRef("");
+  let selleremailRef = useRef("");
+  let subcategoryRef = useRef("");
+  let priceRef = useRef("");
+  let ratingRef = useRef("");
+  let availableRef = useRef("");
+  let descriptionRef = useRef("");
 
   let handleSubmit = (e) => {
     e.preventDefault();
+    let product_name = nameRef.current;
+    let product_photo = photoRef.current;
+    let sellname = sellernameRef.current;
+    let selleremail = selleremailRef.current;
+    let sub_category = subcategoryRef.current;
+    let price = priceRef.current;
+    let rating = ratingRef.current;
+    let available = availableRef.current;
+    let description = descriptionRef.current;
+    console.log({
+      product_name,
+      product_photo,
+      sellname,
+      selleremail,
+      sub_category,
+      price,
+      rating,
+      available,
+      description,
+    });
   };
   return (
     <>
@@ -38,21 +65,21 @@ function AddToys() {
               </div>
               <div>
                 <label htmlFor="" className="block">
-                  Name:
+                  Product Name:
                 </label>
                 <input
                   type="text"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Name"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    nameRef.current = e.target.value;
                   }}
                 />
               </div>
 
               <div>
                 <label htmlFor="" className="block">
-                  Photo URL:
+                  Product photo:
                 </label>
                 <input
                   type="text"
@@ -70,10 +97,11 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
+                  defaultValue={user.displayName}
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Seller Name"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    sellernameRef.current = e.target.value;
                   }}
                 />
               </div>
@@ -84,28 +112,29 @@ function AddToys() {
                 </label>
                 <input
                   type="text"
+                  defaultValue={user.email}
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Seller Email"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    selleremailRef.current = e.target.value;
                   }}
                 />
               </div>
 
-              <div>
+              <div className="">
                 <label htmlFor="" className="block">
                   Select Sub-category:
                 </label>
                 <select
                   type="text"
-                  className="focus:shadow-lg outline-none border border-solid border-orange-400 p-1 rounded-md indent-2"
+                  className="w-[210px] block focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Seller Email"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    subcategoryRef.current = e.target.value;
                   }}
                 >
                   <option value="mathematics_toys">Mathematical Toy</option>
-                  <option value="scientific toys">Scientific Toy</option>
+                  <option value="scientific_toys">Scientific Toy</option>
                   <option value="language_toys">Language Toy</option>
                   <option value="engineering_toys">Engineering Toy</option>
                 </select>
@@ -120,7 +149,7 @@ function AddToys() {
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Price"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    priceRef.current = e.target.value;
                   }}
                 />
               </div>
@@ -133,7 +162,7 @@ function AddToys() {
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Rating"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    ratingRef.current = e.target.value;
                   }}
                 />
               </div>
@@ -146,7 +175,7 @@ function AddToys() {
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
                   placeholder="Available Quantity"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    availableRef.current = e.target.value;
                   }}
                 />
               </div>
@@ -157,9 +186,9 @@ function AddToys() {
                 <textarea
                   type="text"
                   className="focus:shadow-lg outline-none border border-solid border-green-400 p-1 rounded-md indent-2"
-                  placeholder="Seller Email"
+                  placeholder="Toy Description"
                   onChange={(e) => {
-                    usernameRef.current = e.target.value;
+                    descriptionRef.current = e.target.value;
                   }}
                 />
               </div>
@@ -172,7 +201,6 @@ function AddToys() {
                   Save
                 </button>
               </div>
-             
             </form>
           </div>
         </div>
