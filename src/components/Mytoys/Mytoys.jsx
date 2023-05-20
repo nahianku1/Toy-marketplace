@@ -5,18 +5,21 @@ import Footer from "../Footer/Footer";
 import "./style.css";
 import { Vortex } from "react-loader-spinner";
 import useSWR from "swr";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider";
 import { Link } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Updatemodal from "../Updatemodal/Updatemodal";
 import Swal from "sweetalert2";
+import Pagination from "../Pagination/Pagination";
 
 function Mytoys() {
   console.log(`Rendered Again`);
   let { user, loading, update, setUpdated } = useContext(AuthContext);
   let [mytoys, setMytoys] = useState([]);
   let [openmodal, setOpenmodal] = useState(false);
+
+
   let [modalinfo, setModalinfo] = useState(null);
 
   useEffect(() => {
@@ -43,28 +46,36 @@ function Mytoys() {
       cancelButtonText: "No, cancel please!",
       closeOnConfirm: false,
       closeOnCancel: false,
-    }).then((willDelete) => {
-      if (willDelete) {
-        fetch(`http://localhost:5000/my-toys-delete/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              Swal.fire({
-                title: "Good Job",
-                text: "Deleted Successfully!",
-                icon: "success",
-              });
-              fetch(`http://localhost:5000/my-toys?email=${user.email}`)
-              .then((res) => res.json())
-              .then((data) => {
-                setMytoys(data);
-              });
-            }
-          });
-      }
-    });
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          fetch(`http://localhost:5000/my-toys-delete/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount) {
+                Swal.fire({
+                  title: "Good Job",
+                  text: "Deleted Successfully!",
+                  icon: "success",
+                });
+                fetch(`http://localhost:5000/my-toys?email=${user.email}`)
+                  .then((res) => res.json())
+                  .then((data) => {
+                    setMytoys(data);
+                  });
+              }
+            });
+        }
+      })
+      .catch((e) => {
+        Swal.fire({
+          title: "Good Job",
+          text: "Deleted Cancelled Successfully!",
+          icon: "info",
+        });
+      });
   };
 
   if (loading || !mytoys?.length > 0) {
@@ -121,7 +132,7 @@ function Mytoys() {
               <thead>
                 <tr>
                   <th>Photo</th>
-                  <th>Name</th>
+                  <th>Toy Name</th>
                   <th>Seller Name</th>
                   <th>Seller Email</th>
                   <th>Price</th>
@@ -149,7 +160,7 @@ function Mytoys() {
                     <td>{entry?.rating}</td>
                     <td>{entry?.available}</td>
                     <td>{entry?.sub_category}</td>
-                    <td>{entry?.description?.substr(0, 100) + "....."}</td>
+                    <td>{entry?.description?.substr(0, 100) + ". . . . ."}</td>
                     <td className="space-x-3 text-[20px]">
                       <button onClick={() => handleEdit(entry)}>
                         <FaEdit />
@@ -162,9 +173,11 @@ function Mytoys() {
                 ))}
               </tbody>
             </table>
+            <Pagination data={[...Array(mytoys).keys()]} itemsPerPage={2} />
           </div>
         </div>
       </main>
+
       <Footer />
     </>
   );
