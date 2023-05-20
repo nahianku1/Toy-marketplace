@@ -4,6 +4,7 @@ import { IoClipboardSharp, IoPersonSharp } from "react-icons/io5";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { AuthContext } from "../../AuthProvider";
+import Swal from "sweetalert2";
 
 function AddToys() {
   let { user } = useContext(AuthContext);
@@ -12,7 +13,7 @@ function AddToys() {
     e.preventDefault();
     let product_name = e.target.name.value;
     let product_photo = e.target.photo.value;
-    let sellname = e.target.sellername.value;
+    let sellername = e.target.sellername.value;
     let selleremail = e.target.selleremail.value;
     let sub_category = e.target.category.value;
     let price = e.target.price.value;
@@ -22,7 +23,7 @@ function AddToys() {
     console.log({
       product_name,
       product_photo,
-      sellname,
+      sellername,
       selleremail,
       sub_category,
       price,
@@ -38,7 +39,7 @@ function AddToys() {
       body: JSON.stringify({
         product_name,
         product_photo,
-        sellname,
+        sellername,
         selleremail,
         sub_category,
         price,
@@ -48,7 +49,13 @@ function AddToys() {
       }),
     });
     let data = await res.json();
-    console.log(data);
+    if(data.insertedId){
+      Swal.fire({
+        title: "Good Job",
+        text: "Added Successfully!",
+        icon: "success",
+      });
+    }
   };
   return (
     <>

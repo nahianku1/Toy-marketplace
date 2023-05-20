@@ -8,6 +8,8 @@ export let AuthContext = createContext(null);
 function AuthProvider({ children }) {
   let [user, setUser] = useState("");
   let [loading, setLoading] = useState(true);
+  let [update, setUpdated] = useState(false);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       console.log(user);
@@ -15,7 +17,7 @@ function AuthProvider({ children }) {
       setLoading(false);
     });
   }, []);
-  let authInfo = { auth, user, loading };
+  let authInfo = { auth, user, loading,setUpdated ,setLoading};
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

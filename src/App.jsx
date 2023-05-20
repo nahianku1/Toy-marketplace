@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
-import { createContext } from "react";
+import { Suspense, createContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Footer from "./components/Footer/Footer";
+import { Vortex } from "react-loader-spinner";
 
 export let FavContext = createContext(null);
 
@@ -22,7 +23,23 @@ function App() {
     <>
       {/* <FavContext.Provider value={{favstate,setFavstate,updated,setUpdated}}> */}
       <Header navbar={true} />
-      <Outlet />
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center min-h-[calc(100vh-45px)]">
+            <Vortex
+              visible={true}
+              height="200"
+              width="200"
+              ariaLabel="vortex-loading"
+              wrapperStyle={{}}
+              wrapperClass="vortex-wrapper"
+              colors={["red", "green", "blue", "yellow", "orange", "purple"]}
+            />
+          </div>
+        }
+      >
+        <Outlet />
+      </Suspense>
       <Footer />
     </>
   );
