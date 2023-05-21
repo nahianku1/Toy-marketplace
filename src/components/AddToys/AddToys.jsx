@@ -66,7 +66,7 @@ function AddToys() {
         <div className="-z-10 fixed bottom-0 right-11 bg-yellow-200 [filter:blur(120px)] w-[400px] h-[200px]"></div>
         <Header navbar={false} />
         <div className="flex items-center justify-center mt-[50px] ">
-          <div className="bg-[rgba(255,255,255,0.2)] shadow-2xl  w-[320px] md:w-[400px] py-[30px] rounded-md ">
+          <div className="bg-[rgba(255,255,255,0.2)] shadow-2xl  w-[320px] md:w-[450px] py-[30px] rounded-md ">
             <form
               action=""
               onSubmit={handleSubmit}
@@ -81,6 +81,7 @@ function AddToys() {
                   Product Name:
                 </label>
                 <input
+                
                   type="text"
                   name="name"
                   className="focus:shadow-lg outline-none border border-solid 

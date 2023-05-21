@@ -6,7 +6,6 @@ import "./style.css";
 import { Vortex } from "react-loader-spinner";
 import useSWR from "swr";
 
-import Pagination from "../Pagination/Pagination";
 import { useEffect, useState } from "react";
 
 function AllToys() {

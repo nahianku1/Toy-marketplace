@@ -8,17 +8,29 @@ import useSWR from "swr";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider";
 import { Link } from "react-router-dom";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaChevronDown, FaEdit, FaTrash } from "react-icons/fa";
 import Updatemodal from "../Updatemodal/Updatemodal";
 import Swal from "sweetalert2";
-import Pagination from "../Pagination/Pagination";
 
 function Mytoys() {
   console.log(`Rendered Again`);
   let { user, loading, update, setUpdated } = useContext(AuthContext);
   let [mytoys, setMytoys] = useState([]);
   let [openmodal, setOpenmodal] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
 
+  const handleOptionChange = (event) => {
+    console.log(event.target.value);
+    if (event.target.value === "-1") {
+      fetch(`http://localhost:5000/sorted-toys?email=${user.email}&sort=-1`)
+        .then((res) => res.json())
+        .then((data) => setMytoys(data));
+    } else {
+      fetch(`http://localhost:5000/sorted-toys?email=${user.email}&sort=1`)
+        .then((res) => res.json())
+        .then((data) => setMytoys(data));
+    }
+  };
 
   let [modalinfo, setModalinfo] = useState(null);
 
@@ -126,8 +138,21 @@ function Mytoys() {
         <div className="-z-10 fixed bottom-0 left-11 bg-pink-300 [filter:blur(120px)] w-[400px] h-[200px]"></div>
         <div className="-z-10 fixed bottom-0 right-11 bg-yellow-200 [filter:blur(120px)] w-[400px] h-[200px]"></div>
         <Header navbar={false} />
+
         <div className="mx-[0px] flex items-center justify-center md:mx-[120px] mt-[60px]">
           <div className="bg-[rgba(255,255,255,0.3)] p-[20px] w-[300px] md:w-full overflow-x-auto shadow-2xl rounded-xl ">
+            <div className="mb-[20px] outline-none focus:border border-lime-400 border-solid">
+              <label htmlFor="options">Sort By Price:</label>
+              <select
+                id="options"
+                value={selectedOption}
+                onChange={handleOptionChange}
+              >
+                <option value="">Select</option>
+                <option value="1">Ascending</option>
+                <option value="-1">Descending</option>
+              </select>
+            </div>
             <table>
               <thead>
                 <tr>
@@ -173,7 +198,6 @@ function Mytoys() {
                 ))}
               </tbody>
             </table>
-            <Pagination data={[...Array(mytoys).keys()]} itemsPerPage={2} />
           </div>
         </div>
       </main>
