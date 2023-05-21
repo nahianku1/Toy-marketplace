@@ -14,12 +14,14 @@ import Register from "./components/Register/Register.jsx";
 import AddToys from "./components/AddToys/AddToys.jsx";
 import Mytoys from "./components/Mytoys/Mytoys.jsx";
 import AllToys from "./components/AllToys/AllToys.jsx";
+import ProductDetails from "./components/ProductDetails/ProductDetails.jsx";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
+        <Route path="/single/:id" element={<ProductDetails />} />
       </Route>
       <Route path="/add-toy" element={<AddToys />} />
       <Route path="/my-toys" element={<Mytoys />} />

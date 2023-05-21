@@ -23,23 +23,8 @@ function App() {
     <>
       {/* <FavContext.Provider value={{favstate,setFavstate,updated,setUpdated}}> */}
       <Header navbar={true} />
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center min-h-[calc(100vh-45px)]">
-            <Vortex
-              visible={true}
-              height="200"
-              width="200"
-              ariaLabel="vortex-loading"
-              wrapperStyle={{}}
-              wrapperClass="vortex-wrapper"
-              colors={["red", "green", "blue", "yellow", "orange", "purple"]}
-            />
-          </div>
-        }
-      >
-        <Outlet />
-      </Suspense>
+
+      <Outlet />
       <Footer />
     </>
   );

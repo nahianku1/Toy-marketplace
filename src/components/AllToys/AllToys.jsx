@@ -9,6 +9,7 @@ import useSWR from "swr";
 
 import { useEffect, useState } from "react";
 import { FaSistrix } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function AllToys() {
   console.log(`Rendered Again`);
@@ -16,6 +17,7 @@ function AllToys() {
   let [currentpage, setCurrentPage] = useState(1);
   let [alltoys, setAlltoys] = useState([]);
   const [searchQuery, setSearchQuery] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   let handleView = async (id) => {
     console.log(id);
@@ -29,7 +31,8 @@ function AllToys() {
       .then((data) => {
         setTotaPage(data.totalPage);
         setAlltoys(data.result);
-        setSearchQuery(data.result)
+        setSearchQuery(data.result);
+        setLoading(false);
       });
   }, [currentpage]);
 
@@ -42,14 +45,13 @@ function AllToys() {
     const filteredResults = alltoys.filter((item) =>
       item.product_name.toLowerCase().includes(query.toLowerCase())
     );
-    if (query.length<1) {
+    if (query.length < 1) {
       setAlltoys(searchQuery);
     } else {
       setAlltoys(filteredResults);
     }
-
   };
-  if (!alltoys) {
+  if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[calc(100vh-45px)]">
         <Vortex
@@ -126,12 +128,14 @@ function AllToys() {
                     <td>{entry?.price}</td>
                     <td>{entry?.available}</td>
                     <td>
+                      <Link to={`/single/${entry._id}`}>
                       <button
                         className="px-[15px] py-[10px] bg-orange-400 "
                         onClick={() => handleView(entry._id)}
                       >
                         View Details
                       </button>
+                      </Link>
                     </td>
                   </tr>
                 ))}
