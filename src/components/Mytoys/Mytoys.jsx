@@ -13,10 +13,17 @@ import Updatemodal from "../Updatemodal/Updatemodal";
 import Swal from "sweetalert2";
 
 function Mytoys() {
+
+  useEffect(() => {
+    document.title = "Edufun | My Toys";
+  }, []);
+
   console.log(`Rendered Again`);
-  let { user, loading, update, setUpdated } = useContext(AuthContext);
+  let { user, update, setUpdated } = useContext(AuthContext);
   let [mytoys, setMytoys] = useState([]);
   let [openmodal, setOpenmodal] = useState(false);
+  let [loading, setLoading] = useState(true);
+  let [modalinfo, setModalinfo] = useState(null);
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleOptionChange = (event) => {
@@ -32,7 +39,7 @@ function Mytoys() {
     }
   };
 
-  let [modalinfo, setModalinfo] = useState(null);
+ 
 
   useEffect(() => {
     fetch(`http://localhost:5000/my-toys?email=${user.email}`)
@@ -40,6 +47,7 @@ function Mytoys() {
       .then((data) => {
         setMytoys(data);
         console.log(mytoys);
+        setLoading(false)
       });
   }, [user, update]);
 
@@ -90,7 +98,8 @@ function Mytoys() {
       });
   };
 
-  if (loading || !mytoys?.length > 0) {
+  if (loading ) {
+    console.log(`Entered loading`);
     return (
       <div className="flex justify-center items-center min-h-[calc(100vh-45px)]">
         <Vortex
@@ -104,7 +113,8 @@ function Mytoys() {
         />
       </div>
     );
-  } else if (typeof mytoys[0] == "string") {
+  } else if (typeof mytoys[0] == "string" || !mytoys?.length > 0) {
+    console.log(`Entered no found`);
     return (
       <>
         <main className="min-h-screen mb-[60px]">

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const AboutUs = () => {
+    useEffect(() => {
+        document.title = "Edufun |About Page";
+      }, []);
   return (
     <main className="min-h-screen ">
       <div className="-z-10 fixed bg-sky-300 [filter:blur(120px)] w-[200px] h-[200px]"></div>

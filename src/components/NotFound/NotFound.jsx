@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
+    useEffect(() => {
+        document.title = "Edufun | Error Page";
+      }, []);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center ">
       <img src="/images/404.jpg" alt="Not Found" className="w-[400px]" />

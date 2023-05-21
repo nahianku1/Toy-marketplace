@@ -43,21 +43,6 @@ function Header({ navbar }) {
     signOut(auth);
     navigate("/signin");
   };
-  useEffect(() => {
-    if (theme === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
 
   if (!navbar) {
     return (
@@ -81,10 +66,9 @@ function Header({ navbar }) {
           <div className="flex gap-3 ">
             <div className="hidden gap-3  md:flex">
               <NavLink to="/">Home</NavLink>
-              {user?.email && <NavLink to="/all-toys">All Toys</NavLink>}
-              {user?.email && <NavLink to="/my-toys">My Toys</NavLink>}
-              {user?.email && <NavLink to="/add-toy">Add Toy</NavLink>}
-
+              <NavLink to="/all-toys">All Toys</NavLink>
+              <NavLink to="/my-toys">My Toys</NavLink>
+              <NavLink to="/add-toy">Add Toy</NavLink>
               <NavLink to="/about">About</NavLink>
               <NavLink to="/about">Contact</NavLink>
               <NavLink to="/blog">Blog</NavLink>
@@ -97,17 +81,6 @@ function Header({ navbar }) {
             </button>
           </div>
           <div className="flex items-center  gap-4">
-            {theme === "light" ? (
-              <IoMoon
-                className="cursor-pointer text-2xl font-bold"
-                onClick={() => setTheme("dark")}
-              />
-            ) : (
-              <IoSunnySharp
-                className="cursor-pointer text-2xl font-bold"
-                onClick={() => setTheme("light")}
-              />
-            )}
             {user && user?.photoURL ? (
               <>
                 <Link to="#">
@@ -181,9 +154,9 @@ function Header({ navbar }) {
         <div className="flex gap-3 ">
           <div className="hidden gap-3  md:flex">
             <NavLink to="/">Home</NavLink>
-            {user?.email && <NavLink to="/all-toys">All Toys</NavLink>}
-            {user?.email && <NavLink to="/my-toys">My Toys</NavLink>}
-            {user?.email && <NavLink to="/add-toy">Add Toy</NavLink>}
+            <NavLink to="/all-toys">All Toys</NavLink>
+            <NavLink to="/my-toys">My Toys</NavLink>
+            <NavLink to="/add-toy">Add Toy</NavLink>
 
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact</NavLink>
@@ -197,17 +170,6 @@ function Header({ navbar }) {
           </button>
         </div>
         <div className="flex items-center  gap-4">
-          {theme === "light" ? (
-            <IoMoon
-              className="cursor-pointer text-2xl font-bold"
-              onClick={() => setTheme("dark")}
-            />
-          ) : (
-            <IoSunnySharp
-              className="cursor-pointer text-2xl font-bold"
-              onClick={() => setTheme("light")}
-            />
-          )}
           {user && user?.photoURL ? (
             <>
               <Link to="#">

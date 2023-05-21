@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { IoClipboardSharp, IoPersonSharp } from "react-icons/io5";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -8,7 +8,10 @@ import Swal from "sweetalert2";
 
 function AddToys() {
   let { user } = useContext(AuthContext);
-
+  useEffect(() => {
+    document.title = "Edufun | Add Toys";
+  }, []);
+  
   let handleSubmit = async (e) => {
     e.preventDefault();
     let product_name = e.target.name.value;

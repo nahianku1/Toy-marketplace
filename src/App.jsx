@@ -23,7 +23,6 @@ function App() {
     <>
       {/* <FavContext.Provider value={{favstate,setFavstate,updated,setUpdated}}> */}
       <Header navbar={true} />
-
       <Outlet />
       <Footer />
     </>

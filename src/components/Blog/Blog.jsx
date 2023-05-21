@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Blog() {
+    useEffect(() => {
+        document.title = "Edufun | Blog";
+      }, []);
   return (
     <>
       <main className="min-h-screen ">

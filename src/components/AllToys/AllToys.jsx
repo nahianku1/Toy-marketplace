@@ -22,7 +22,10 @@ function AllToys() {
   let handleView = async (id) => {
     console.log(id);
   };
-  let limitperPage = 20;
+  useEffect(() => {
+    document.title = "Edufun | All Toys";
+  }, []);
+  let limitperPage = 2;
   useEffect(() => {
     fetch(
       `http://localhost:5000/all-toys?page=${currentpage}&itemPerPage=${limitperPage}`
@@ -129,12 +132,12 @@ function AllToys() {
                     <td>{entry?.available}</td>
                     <td>
                       <Link to={`/single/${entry._id}`}>
-                      <button
-                        className="px-[15px] py-[10px] bg-orange-400 "
-                        onClick={() => handleView(entry._id)}
-                      >
-                        View Details
-                      </button>
+                        <button
+                          className="px-[15px] py-[10px] bg-orange-400 "
+                          onClick={() => handleView(entry._id)}
+                        >
+                          View Details
+                        </button>
                       </Link>
                     </td>
                   </tr>
@@ -165,7 +168,7 @@ function AllToys() {
               {index + 1}
             </button>
           ))}
-          {currentpage <= totapage && (
+          {currentpage < totapage && (
             <button
               onClick={() => setCurrentPage((c) => c + 1)}
               className="px-4 py-2 mx-1 rounded bg-blue-500 text-white"

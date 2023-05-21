@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {  Vortex } from "react-loader-spinner";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 
 
 let TabDetails = async () => {
+
+
   let res = await fetch(
     `https://toy-marketplace-server-kappa.vercel.app/tab-details`
   );

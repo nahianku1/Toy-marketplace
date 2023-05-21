@@ -54,7 +54,7 @@ function Sidebar({ setOpen, open }) {
       <NavLink to="/about" onClick={() => setOpen(false)}>
         About
       </NavLink>
-      <NavLink to="/about" onClick={() => setOpen(false)}>
+      <NavLink to="/contact" onClick={() => setOpen(false)}>
         Contact
       </NavLink>
       <NavLink to="/blog" onClick={() => setOpen(false)}>

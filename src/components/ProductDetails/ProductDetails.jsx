@@ -5,13 +5,15 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Vortex } from "react-loader-spinner";
 import useSWR from "swr";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 
 function ProductDetails() {
   let params = useParams();
+  let location = useLocation();
+  location.state = location.pathname;
   let [loading, setLoading] = useState(true);
   let [singledetails, setSingleDetails] = useState([]);
   console.log(params);
@@ -24,12 +26,9 @@ function ProductDetails() {
         setLoading(false);
       });
   }, []);
-  //   let SingleDetails = async () => {
-  //     let res = await fetch(`http://localhost:5000/single-toy/${params.id}`);
-  //     let data = await res.json();
-  //     return data;
-  //   };
-  //   let { data: singledetails } = useSWR("Single-deatails", SingleDetails);
+  useEffect(() => {
+    document.title = "Edufun | Product Details";
+  }, []);
 
   if (loading) {
     return (
@@ -54,8 +53,7 @@ function ProductDetails() {
         <div className="-z-10 fixed  right-10 bg-lime-300 [filter:blur(120px)] w-[200px] h-[200px]"></div>
         <div className="-z-10 fixed bottom-0 left-11 bg-pink-300 [filter:blur(120px)] w-[400px] h-[200px]"></div>
         <div className="-z-10 fixed bottom-0 right-11 bg-yellow-200 [filter:blur(120px)] w-[400px] h-[200px]"></div>
-        <Header navbar={false} />
-        <div className="flex flex-col md:flex-row p-[20px] mt-[30px] mx-[20px] md:mx-[120px] bg-[rgba(255,255,255,0.3)] rounded-lg shadow-2xl">
+        <div className="flex flex-col md:flex-row p-[20px] mt-[90px] mx-[20px] md:mx-[120px] bg-[rgba(255,255,255,0.3)] rounded-lg shadow-2xl">
           <div className="md:w-1/2">
             <img
               src={singledetails.product_photo}
@@ -70,9 +68,15 @@ function ProductDetails() {
             <p className="text-gray-600 mb-2">
               Sold by: {singledetails.sellername} ({singledetails.selleremail})
             </p>
-            <p className="text-2xl font-bold mb-4">Price: {singledetails.price}$</p>
+            <p className="text-2xl font-bold mb-4">
+              Price: {singledetails.price}$
+            </p>
             <div className="flex items-center mb-4">
-              <Rating style={{ maxWidth: 80 }} value={singledetails.rating} readOnly />
+              <Rating
+                style={{ maxWidth: 80 }}
+                value={singledetails.rating}
+                readOnly
+              />
               <span className="text-gray-600 ml-2">
                 ({singledetails.available} PCs available)
               </span>
@@ -84,7 +88,6 @@ function ProductDetails() {
           </div>
         </div>
       </main>
-      {/* <Footer /> */}
     </>
   );
 }

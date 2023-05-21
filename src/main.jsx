@@ -19,19 +19,41 @@ import NotFound from "./components/NotFound/NotFound.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route path="/single/:id" element={<ProductDetails />} />
+        <Route
+          path="/single/:id"
+          element={
+            <PrivateRoute>
+              <ProductDetails />
+            </PrivateRoute>
+          }
+        />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
-      <Route path="/add-toy" element={<AddToys />} />
-      <Route path="/my-toys" element={<Mytoys />} />
+      <Route
+        path="/add-toy"
+        element={
+          <PrivateRoute>
+            <AddToys />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/my-toys"
+        element={
+          <PrivateRoute>
+            <Mytoys />
+          </PrivateRoute>
+        }
+      />
       <Route path="/all-toys" element={<AllToys />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/register" element={<Register />} />

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -17,6 +17,10 @@ function Register() {
   let photoRef = useRef("");
   let navigate = useNavigate();
   let { auth } = useContext(AuthContext);
+
+  useEffect(() => {
+    document.title = "Edufun | Register";
+  }, []);
 
   let modifyError = (error) => {
     let modifiedMessage = error.message

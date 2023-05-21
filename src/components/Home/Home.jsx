@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 function Home() {
   useEffect(() => {
     AOS.init();
+    document.title='Edufun | Home'
   }, []);
   return (
     <main className="min-h-screen ">

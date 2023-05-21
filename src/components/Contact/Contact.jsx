@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Contact() {
+  useEffect(() => {
+    document.title = "Edufun | Contact";
+  }, []);
   return (
     <main className="min-h-screen ">
       <div className="-z-10 fixed bg-sky-300 [filter:blur(120px)] w-[200px] h-[200px]"></div>
@@ -8,7 +11,7 @@ function Contact() {
       <div className="-z-10 fixed bottom-0 left-11 bg-pink-300 [filter:blur(120px)] w-[400px] h-[200px]"></div>
       <div className="-z-10 fixed bottom-0 right-11 bg-yellow-200 [filter:blur(120px)] w-[400px] h-[200px]"></div>
       <div className="flex flex-col items-center justify-center min-h-screen ">
-        <div className="max-w-4xl p-8 mx-auto">
+        <div className="max-w-4xl p-8 mx-auto mt-[90px]">
           <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 md:pr-4">

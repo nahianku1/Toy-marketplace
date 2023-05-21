@@ -5,15 +5,19 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { FaLock, FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 let GithubProvider = new GithubAuthProvider();
 let GoogleProvider = new GoogleAuthProvider();
 function Signin() {
+    let location=useLocation()
+  useEffect(() => {
+    document.title = "Edufun | Sign In";
+  }, []);
   let [hidden, setHidden] = useState(true);
   let [error, setError] = useState("");
 
@@ -37,7 +41,12 @@ function Signin() {
 
     signInWithEmailAndPassword(auth, emailRef.current, passwordRef.current)
       .then((result) => {
-        navigate("/");
+        if(location.state){
+
+          navigate(location.state);
+        }else{
+          navigate('/')
+        }
       })
       .catch((error) => {
         modifyError(error);
@@ -50,7 +59,12 @@ function Signin() {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        if(location.state){
+
+          navigate(location.state);
+        }else{
+          navigate('/')
+        }
       })
       .catch((error) => {
         modifyError(error);
