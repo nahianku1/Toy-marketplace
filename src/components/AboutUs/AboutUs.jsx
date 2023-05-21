@@ -20,11 +20,11 @@ const AboutUs = () => {
               <p className="font-pacifico font-bold text-[30px]">Edufun Toys</p>
             </div>
             <p className="text-lg text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu
-              est at lacus posuere aliquet sit amet at purus. In molestie felis
-              vel ante fringilla consectetur. Sed vitae ante euismod, laoreet
-              sapien sit amet, fringilla sem. Aliquam pretium magna ac erat
-              volutpat, eget tempor ligula fringilla.
+              At Edufun Toys, we believe that learning should be fun and
+              engaging. That's why we are dedicated to creating educational toys
+              that inspire creativity, foster curiosity, and promote learning
+              through play. Our mission is to provide children with the tools
+              they need to explore, discover, and develop essential skills.
             </p>
           </div>
           <div className="md:w-1/2 md:pl-4">
