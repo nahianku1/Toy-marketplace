@@ -186,7 +186,7 @@ function Header({ navbar }) {
             {user?.email && <NavLink to="/add-toy">Add Toy</NavLink>}
 
             <NavLink to="/about">About</NavLink>
-            <NavLink to="/about">Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
             <NavLink to="/blog">Blog</NavLink>
           </div>
           <button

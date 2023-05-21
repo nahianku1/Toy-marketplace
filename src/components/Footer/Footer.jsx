@@ -1,5 +1,7 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
+import Lottie from "lottie-react";
+import socialmedia from "../../../public/social-media.json";
 
 function Footer() {
   return (
@@ -9,10 +11,11 @@ function Footer() {
           <div className="w-full lg:w-1/4 mb-8   lg:mb-0 ">
             <h2 className="text-lg font-bold mb-4">About Us</h2>
             <p className="text-sm">
-              At Fantasy Recipe, we're passionate about food and cooking. We
-              believe that great meals bring people together, and that anyone
-              can learn to cook delicious and healthy dishes with the right
-              ingredients and techniques.
+              At Edufun Toys, we believe that learning should be fun and
+              engaging. That's why we create educational toys that are designed
+              to help children learn and grow in a playful way. Our toys are
+              made with high-quality materials and are designed to be safe for
+              children of all ages.
             </p>
           </div>
           <div className="w-full lg:flex lg:flex-col  lg:items-center lg:w-1/4 mb-8 lg:mb-0 ">
@@ -49,11 +52,13 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="w-full lg:w-1/4">
-            <h2 className="text-lg text-center font-bold mb-4">
-              Contact via Email
-            </h2>
-            <form className="flex items-center">
+          <div className="w-full relative lg:w-1/4">
+            <Lottie
+              className="block absolute top-0 w-[200px]"
+              animationData={socialmedia}
+              loop={true}
+            />
+            {/* <form className="flex items-center">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -63,9 +68,9 @@ function Footer() {
                 type="submit"
                 className="bg-black  py-2 px-4 rounded-r-full text-white"
               >
-                <FaTelegramPlane className="text-[25px]"/>
+                <FaTelegramPlane className="text-[25px]" />
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
         <div className="container mx-auto mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center">
@@ -74,7 +79,7 @@ function Footer() {
             <li className="mr-4">
               <a href="#">Privacy Policy</a>
             </li>
-            <li  className="mr-4">
+            <li className="mr-4">
               <a href="#">Terms of Service</a>
             </li>
             <li className="flex g-[4] items-center justify-center">

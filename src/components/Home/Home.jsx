@@ -1,5 +1,7 @@
+import AtaGlance from "../AtaGlance/AtaGlance"
 import Gallery from "../Gallery/Gallery"
 import Homebanner from "../Homebanner/Homebanner"
+import OurMission from "../OurMission/OurMission"
 import TabView from "../TabView/TabView"
 
 function Home() {
@@ -12,7 +14,8 @@ function Home() {
       <Homebanner />
       <Gallery/>
       <TabView/>
-      
+      <OurMission/>
+      <AtaGlance/>
     </main>
   )
 }
