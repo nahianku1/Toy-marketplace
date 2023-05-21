@@ -2,7 +2,7 @@ import React from "react";
 
 function AtaGlance() {
   return (
-    <div className="bg-[rgba(255,255,255,0.3)] shadow-2xl mx-[120px] rounded-xl p-[20px] mb-[40px]">
+    <div className="bg-[rgba(255,255,255,0.3)] shadow-2xl mx-5 md:mx-[120px] rounded-xl p-[20px] mb-[40px]">
       <h1 className="text-center font-bold text-4xl">
         Edu<span className="text-orange-400">fun</span> at A Glance
       </h1>
@@ -10,7 +10,7 @@ function AtaGlance() {
         Here’s an nutshell of our achievements as a customer-oriented
         educational toy platform.
       </h1>
-      <div className="my-[50px] flex justify-evenly">
+      <div className="my-[50px] block md:flex  justify-evenly">
         <div className="flex flex-col gap-3 items-center">
           <img src="/images/team.png" className="block w-[60px]" alt="" />
           <p className="text-[40px] font-extrabold">20+</p>
