@@ -21,13 +21,13 @@ function Contact() {
               </p>
               <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
               <p className="text-lg text-gray-700">
-                <strong>Phone:</strong> +1 (123) 456-7890
+                <strong>Phone:</strong> +088 01779-137132
               </p>
               <p className="text-lg text-gray-700">
-                <strong>Email:</strong> info@example.com
+                <strong>Email:</strong> himelku1@gmail.com
               </p>
               <p className="text-lg text-gray-700">
-                <strong>Address:</strong> 1234 Toy Street, City, State, Zip Code
+                <strong>Address:</strong> Sathkhira Road, Khulna City, Daulatpur State, Zip Code 1202
               </p>
             </div>
             <div className="md:w-1/2 md:pl-4">

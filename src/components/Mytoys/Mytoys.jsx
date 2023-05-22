@@ -13,7 +13,6 @@ import Updatemodal from "../Updatemodal/Updatemodal";
 import Swal from "sweetalert2";
 
 function Mytoys() {
-
   useEffect(() => {
     document.title = "Edufun | My Toys";
   }, []);
@@ -29,25 +28,29 @@ function Mytoys() {
   const handleOptionChange = (event) => {
     console.log(event.target.value);
     if (event.target.value === "-1") {
-      fetch(`http://localhost:5000/sorted-toys?email=${user.email}&sort=-1`)
+      fetch(
+        `https://toy-marketplace-server-kappa.vercel.app/sorted-toys?email=${user.email}&sort=-1`
+      )
         .then((res) => res.json())
         .then((data) => setMytoys(data));
     } else {
-      fetch(`http://localhost:5000/sorted-toys?email=${user.email}&sort=1`)
+      fetch(
+        `https://toy-marketplace-server-kappa.vercel.app/sorted-toys?email=${user.email}&sort=1`
+      )
         .then((res) => res.json())
         .then((data) => setMytoys(data));
     }
   };
 
- 
-
   useEffect(() => {
-    fetch(`http://localhost:5000/my-toys?email=${user.email}`)
+    fetch(
+      `https://toy-marketplace-server-kappa.vercel.app/my-toys?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMytoys(data);
         console.log(mytoys);
-        setLoading(false)
+        setLoading(false);
       });
   }, [user, update]);
 
@@ -59,19 +62,24 @@ function Mytoys() {
     Swal.fire({
       title: "Are you sure?",
       text: "This action can't be undone.",
-      type: "warning",
+      type: "confirm",
+      icon: "question",
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Yes, Delete it!",
       cancelButtonText: "No, cancel please!",
-      closeOnConfirm: false,
-      closeOnCancel: false,
+      closeOnConfirm: true,
+      closeOnCancel: true,
+      timer:3000
     })
-      .then((willDelete) => {
-        if (willDelete) {
-          fetch(`http://localhost:5000/my-toys-delete/${id}`, {
-            method: "DELETE",
-          })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(
+            `https://toy-marketplace-server-kappa.vercel.app/my-toys-delete/${id}`,
+            {
+              method: "DELETE",
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.deletedCount) {
@@ -79,14 +87,24 @@ function Mytoys() {
                   title: "Good Job",
                   text: "Deleted Successfully!",
                   icon: "success",
+                  timer:3000
                 });
-                fetch(`http://localhost:5000/my-toys?email=${user.email}`)
+                fetch(
+                  `https://toy-marketplace-server-kappa.vercel.app/my-toys?email=${user.email}`
+                )
                   .then((res) => res.json())
                   .then((data) => {
                     setMytoys(data);
                   });
               }
             });
+        } else {
+          Swal.fire({
+            title: "OK",
+            text: "Delete Cancelled!",
+            icon: "info",
+            timer:3000
+          });
         }
       })
       .catch((e) => {
@@ -94,11 +112,12 @@ function Mytoys() {
           title: "Good Job",
           text: "Deleted Cancelled Successfully!",
           icon: "info",
+          timer:3000
         });
       });
   };
 
-  if (loading ) {
+  if (loading) {
     console.log(`Entered loading`);
     return (
       <div className="flex justify-center items-center min-h-[calc(100vh-45px)]">
@@ -123,9 +142,10 @@ function Mytoys() {
           <div className="-z-10 fixed bottom-0 left-11 bg-pink-300 [filter:blur(120px)] w-[400px] h-[200px]"></div>
           <div className="-z-10 fixed bottom-0 right-11 bg-yellow-200 [filter:blur(120px)] w-[400px] h-[200px]"></div>
           <Header navbar={false} />
-          <div className="min-h-screen flex items-center justify-center">
-            <h1 className="text-3xl">No Item Found!</h1>
-          </div>
+
+          <h1 className="text-[40px] text-center leading-[100vh] font-extrabold">
+            No Item Found!
+          </h1>
         </main>
         <Footer />
       </>

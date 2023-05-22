@@ -11,7 +11,7 @@ function AddToys() {
   useEffect(() => {
     document.title = "Edufun | Add Toys";
   }, []);
-  
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     let product_name = e.target.name.value;
@@ -34,30 +34,35 @@ function AddToys() {
       available,
       description,
     });
-    let res = await fetch("http://localhost:5000/add-toy", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        product_name,
-        product_photo,
-        sellername,
-        selleremail,
-        sub_category,
-        price,
-        rating,
-        available,
-        description,
-      }),
-    });
+    let res = await fetch(
+      "https://toy-marketplace-server-kappa.vercel.app/add-toy",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          product_name,
+          product_photo,
+          sellername,
+          selleremail,
+          sub_category,
+          price,
+          rating,
+          available,
+          description,
+        }),
+      }
+    );
     let data = await res.json();
-    if(data.insertedId){
+    if (data.insertedId) {
       Swal.fire({
         title: "Good Job",
         text: "Added Successfully!",
         icon: "success",
+        timer: 3000,
       });
+      e.target.reset();
     }
   };
   return (
@@ -84,7 +89,6 @@ function AddToys() {
                   Product Name:
                 </label>
                 <input
-                
                   type="text"
                   name="name"
                   className="focus:shadow-lg outline-none border border-solid 

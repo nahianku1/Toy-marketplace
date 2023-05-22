@@ -25,10 +25,10 @@ function AllToys() {
   useEffect(() => {
     document.title = "Edufun | All Toys";
   }, []);
-  let limitperPage = 2;
+  let limitperPage = 20;
   useEffect(() => {
     fetch(
-      `http://localhost:5000/all-toys?page=${currentpage}&itemPerPage=${limitperPage}`
+      `https://toy-marketplace-server-kappa.vercel.app/all-toys?page=${currentpage}&itemPerPage=${limitperPage}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -67,6 +67,24 @@ function AllToys() {
           colors={["red", "green", "blue", "yellow", "orange", "purple"]}
         />
       </div>
+    );
+  }
+  if (!alltoys) {
+    return (
+      <>
+        <main className="min-h-screen mb-[60px]">
+          <div className="-z-10 fixed bg-sky-300 [filter:blur(120px)] w-[200px] h-[200px]"></div>
+          <div className="-z-10 fixed  right-10 bg-lime-300 [filter:blur(120px)] w-[200px] h-[200px]"></div>
+          <div className="-z-10 fixed bottom-0 left-11 bg-pink-300 [filter:blur(120px)] w-[400px] h-[200px]"></div>
+          <div className="-z-10 fixed bottom-0 right-11 bg-yellow-200 [filter:blur(120px)] w-[400px] h-[200px]"></div>
+          <Header navbar={false} />
+          <h1 className="flex items-center justify-center leading-[100vh] text-[40px] font-extrabold">
+            No Item Found!
+          </h1>
+        </main>
+
+        <Footer />
+      </>
     );
   }
 
@@ -123,7 +141,7 @@ function AllToys() {
                 </tr>
               </thead>
               <tbody>
-                {alltoys.map((entry) => (
+                {alltoys?.map((entry) => (
                   <tr key={crypto.randomUUID()}>
                     <td>{entry?.sellername}</td>
                     <td>{entry?.product_name}</td>

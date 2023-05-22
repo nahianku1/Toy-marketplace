@@ -20,6 +20,7 @@ import Blog from "./components/Blog/Blog.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
+import TabProductDetails from "./components/TabProductDetails/TabProductDetails.jsx";
 
 let router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,14 @@ let router = createBrowserRouter(
           element={
             <PrivateRoute>
               <ProductDetails />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tabsingle/:id"
+          element={
+            <PrivateRoute>
+              <TabProductDetails />
             </PrivateRoute>
           }
         />

@@ -77,7 +77,7 @@ function TabView() {
                     readOnly
                   />
                   <Link
-                    to="/"
+                    to={`/tabsingle/${entry._id}`}
                     className="px-[15px] py-[10px] bg-orange-400 text-center mt-[5px]"
                   >
                     View Details
@@ -108,7 +108,7 @@ function TabView() {
                     readOnly
                   />
                   <Link
-                    to="/"
+                    to={`/tabsingle/${entry._id}`}
                     className="px-[15px] py-[10px] bg-orange-400 text-center mt-[5px]"
                   >
                     View Details
@@ -139,7 +139,7 @@ function TabView() {
                     readOnly
                   />
                   <Link
-                    to="/"
+                    to={`/tabsingle/${entry._id}`}
                     className="px-[15px] py-[10px] bg-orange-400 text-center mt-[5px]"
                   >
                     View Details
@@ -170,7 +170,7 @@ function TabView() {
                     readOnly
                   />
                   <Link
-                    to="/"
+                     to={`/tabsingle/${entry._id}`}
                     className="px-[15px] py-[10px] bg-orange-400 text-center mt-[5px]"
                   >
                     View Details

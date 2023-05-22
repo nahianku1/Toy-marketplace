@@ -53,24 +53,13 @@ function Footer() {
             </ul>
           </div>
           <div className="w-full relative lg:w-1/4">
-            <Lottie
-              className="block absolute top-0 w-[200px]"
-              animationData={socialmedia}
-              loop={true}
-            />
-            {/* <form className="flex items-center">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="py-2 px-4 rounded-l-full w-full md:w-3/4 lg:w-full text-gray-900"
-              />
-              <button
-                type="submit"
-                className="bg-black  py-2 px-4 rounded-r-full text-white"
-              >
-                <FaTelegramPlane className="text-[25px]" />
-              </button>
-            </form> */}
+            <address>
+              <p>Phone: +088 01779-137132</p>
+              <p>Email: himelku1@gmail.com</p>
+              <p>City: Khulna</p>
+              <p> State: Daulatpur</p>
+              <p> Zip Code: 1202</p>
+            </address>
           </div>
         </div>
         <div className="container mx-auto mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center">

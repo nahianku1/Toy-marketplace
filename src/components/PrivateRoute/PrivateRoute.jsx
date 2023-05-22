@@ -25,6 +25,7 @@ function PrivateRoute({ children }) {
     title: "Oooh...",
     text: "You have to log in first to view details!",
     type: "info",
+    timer:3000
   });
   return <Navigate to="/signin" replace state={location.pathname}></Navigate>;
 }

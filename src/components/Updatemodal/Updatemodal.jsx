@@ -12,7 +12,7 @@ function Updatemodal({ modalinfo, setOpenmodal, setMytoys }) {
     let available = e.target.available.value;
     let description = e.target.description.value;
 
-    let res = await fetch(`http://localhost:5000/my-toys-update/${id}`, {
+    let res = await fetch(`https://toy-marketplace-server-kappa.vercel.app/my-toys-update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -27,8 +27,9 @@ function Updatemodal({ modalinfo, setOpenmodal, setMytoys }) {
         title: "Good Job",
         text: "Updated Successfully!",
         icon: "success",
+        timer:3000
       });
-      fetch(`http://localhost:5000/my-toys?email=${user.email}`)
+      fetch(`https://toy-marketplace-server-kappa.vercel.app/my-toys?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setMytoys(data);

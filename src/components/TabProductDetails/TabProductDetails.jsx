@@ -10,24 +10,25 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 
-function ProductDetails() {
+function TabProductDetails() {
   let params = useParams();
-  let location = useLocation();
-  location.state = location.pathname;
   let [loading, setLoading] = useState(true);
   let [singledetails, setSingleDetails] = useState([]);
-  console.log(params);
+  console.log(params.id);
 
   useEffect(() => {
-    fetch(`https://toy-marketplace-server-kappa.vercel.app/single-toy/${params.id}`)
+    fetch(`https://toy-marketplace-server-kappa.vercel.app/tab-details`)
       .then((res) => res.json())
       .then((data) => {
-        setSingleDetails(data);
+        let entry = data.map((item) => Object.values(item)[1].find(val=>val._id==params.id));
+        let arr=entry.find(item=> item)
+        console.log(arr);
+        setSingleDetails(arr);
         setLoading(false);
       });
   }, []);
   useEffect(() => {
-    document.title = "Edufun | Product Details";
+    document.title = "Edufun | Tab Product Details";
   }, []);
 
   if (loading) {
@@ -56,17 +57,17 @@ function ProductDetails() {
         <div className="flex flex-col md:flex-row p-[20px] mt-[90px] mx-[20px] md:mx-[120px] bg-[rgba(255,255,255,0.3)] rounded-lg shadow-2xl">
           <div className="md:w-1/2">
             <img
-              src={singledetails.product_photo}
+              src={singledetails.image}
               alt=""
               className="w-full h-auto rounded-t-lg md:rounded-l-lg md:rounded-t-none"
             />
           </div>
           <div className="md:w-1/2 p-6">
             <h1 className="text-3xl font-bold mb-4">
-              {singledetails.product_name}
+              {singledetails.name}
             </h1>
             <p className="text-gray-600 mb-2">
-              Sold by: {singledetails.sellername} ({singledetails.selleremail})
+              Sold by: {singledetails.seller_name} ({singledetails.seller_email})
             </p>
             <p className="text-2xl font-bold mb-4">
               Price: {singledetails.price}$
@@ -78,10 +79,10 @@ function ProductDetails() {
                 readOnly
               />
               <span className="text-gray-600 ml-2">
-                ({singledetails.available} PCs available)
+                ({singledetails.available_quantity} PCs available)
               </span>
             </div>
-            <p className="text-gray-600 mb-8">{singledetails.description}</p>
+            <p className="text-gray-600 mb-8">{singledetails.details}</p>
             <button className="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors duration-300">
               Add to Cart
             </button>
@@ -92,4 +93,4 @@ function ProductDetails() {
   );
 }
 
-export default ProductDetails;
+export default TabProductDetails;
