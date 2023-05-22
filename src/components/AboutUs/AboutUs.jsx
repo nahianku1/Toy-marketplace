@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const AboutUs = () => {
     useEffect(() => {
-        document.title = "Edufun |About Page";
+        document.title = "Edufun | About Page";
       }, []);
   return (
     <main className="min-h-screen ">
